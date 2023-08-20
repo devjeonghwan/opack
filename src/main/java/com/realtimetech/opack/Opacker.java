@@ -127,7 +127,7 @@ public class Opacker {
      * Constructs the Opacker with the builder of Opacker.
      *
      * @param builder the builder of Opacker
-     * @throws IllegalStateException if the predefined transformer cannot be instanced
+     * @throws IllegalStateException thrown when the predefined transformer cannot be instanced
      */
     private Opacker(@NotNull Builder builder) {
         this.typeBaker = new TypeBaker(this);
@@ -167,7 +167,8 @@ public class Opacker {
      *
      * @param object the object to be serialized
      * @return opack value
-     * @throws SerializeException if a problem occurs during serializing; if this opacker is deserializing
+     * @throws SerializeException thrown when a problem occurred during serializing, or
+     *                            this opacker is already deserializing
      */
     public synchronized OpackValue serialize(@NotNull Object object) throws SerializeException {
         if (this.state == State.DESERIALIZE)
@@ -197,7 +198,8 @@ public class Opacker {
      * @param baseType the class of object to be serialized
      * @param object   the object to be serialized
      * @return prepared opack value
-     * @throws SerializeException if a problem occurs during serializing; if the baseType cannot be baked into {@link BakedType BakedType}
+     * @throws SerializeException thrown when a problem occurred during serializing, or
+     *                            the given baseType cannot be baked into {@link BakedType BakedType}
      */
     private @Nullable Object prepareObjectSerialize(@NotNull Class<?> baseType, @NotNull Object object) throws SerializeException {
         try {
@@ -287,7 +289,8 @@ public class Opacker {
     /**
      * Serialize the elements of each opack value in the stack. (OpackObject: fields, OpackArray element : array elements)
      *
-     * @throws SerializeException if a problem occurs during serializing; if the field in the class of instance to be serialized is not accessible
+     * @throws SerializeException thrown when a problem occurred during serializing, or
+     *                            the field in the class of instance to be serialized is not accessible
      */
     private void executeSerializeStack(int endOfStack) throws SerializeException {
         while (this.objectStack.getSize() > endOfStack) {
@@ -340,7 +343,8 @@ public class Opacker {
      * @param type       the target class
      * @param opackValue the opack value to be deserialized
      * @return deserialized object
-     * @throws DeserializeException if a problem occurs during deserializing; if this opacker is serializing
+     * @throws DeserializeException thrown when a problem occurred during deserializing, or
+     *                              this opacker is already serializing
      */
     public synchronized <T> T deserialize(@NotNull Class<T> type, @NotNull OpackValue opackValue) throws DeserializeException {
         if (this.state == State.SERIALIZE)
@@ -376,7 +380,7 @@ public class Opacker {
      * @param goalType the class of object to be deserialized
      * @param object   the object to be deserialized
      * @return prepared object
-     * @throws DeserializeException if a problem occurs during deserializing
+     * @throws DeserializeException thrown when a problem occurred during deserializing
      */
     private synchronized @Nullable Object prepareObjectDeserialize(@NotNull Class<?> goalType, @NotNull Object object) throws DeserializeException {
         try {
@@ -478,7 +482,8 @@ public class Opacker {
     /**
      * Deserialize the elements of each opack value in the stack. (OpackObject element : fields, OpackArray element : array elements)
      *
-     * @throws DeserializeException if a problem occurs during deserializing; if the field in the class of instance to be deserialized is not accessible
+     * @throws DeserializeException thrown when a problem occurred during deserializing, or
+     *                              the field in the class of instance to be deserialized is not accessible
      */
     private void executeDeserializeStack(int endOfStack) throws DeserializeException {
         while (this.objectStack.getSize() > endOfStack) {

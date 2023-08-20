@@ -155,8 +155,8 @@ public final class DenseCodec extends OpackCodec<Reader, Writer> {
      *
      * @param writer     the writer to write the encoded data
      * @param opackValue the OpackValue to encode
-     * @throws IOException              if an I/O error occurs when writing to byte stream
-     * @throws IllegalArgumentException if the type of data to be encoded is not allowed in dense format
+     * @throws IOException              thrown when a I/O error occurred when writing to byte stream
+     * @throws IllegalArgumentException thrown when the type of data to be encoded is not allowed in dense format
      */
     @Override
     protected void doEncode(@NotNull Writer writer, @NotNull OpackValue opackValue) throws IOException {
@@ -466,7 +466,7 @@ public final class DenseCodec extends OpackCodec<Reader, Writer> {
      *
      * @param opackValue the OpackValue to encode
      * @return returns encoded bytes
-     * @throws EncodeException if a problem occurs during encoding; if the type of data to be encoded is not allowed in specific codec
+     * @throws EncodeException if a problem occurred during encoding; if the type of data to be encoded is not allowed in specific codec
      */
     public byte @NotNull [] encode(@NotNull OpackValue opackValue) throws EncodeException {
         ByteArrayWriter byteArrayWriter = new ByteArrayWriter();
@@ -771,7 +771,7 @@ public final class DenseCodec extends OpackCodec<Reader, Writer> {
      *
      * @param bytes the bytes to decode
      * @return the decoded opack value
-     * @throws DecodeException if a problem occurs during decoding; if the type of data to be decoded is not allowed in specific codec
+     * @throws DecodeException if a problem occurred during decoding; if the type of data to be decoded is not allowed in specific codec
      */
     public @NotNull OpackValue decode(byte @NotNull [] bytes) throws DecodeException {
         ByteArrayReader byteArrayReader = new ByteArrayReader(bytes);

@@ -39,7 +39,7 @@ public class OpackArrayConverter {
      * @param componentType the component type of array
      * @param opackArray    the opack array to convert
      * @return the converted array
-     * @throws InvocationTargetException if exception occurs during invoke opack array getter method
+     * @throws InvocationTargetException if exception occurred during invoke opack array getter method
      * @throws IllegalAccessException    if the getter method object in opack array is enforcing Java language access control and cannot access that method.
      * @throws IllegalArgumentException  if component type is now allowed or invalid
      */

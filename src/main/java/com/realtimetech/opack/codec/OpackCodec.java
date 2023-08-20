@@ -38,7 +38,7 @@ public abstract class OpackCodec<I, O> {
      *
      * @param output     the output to encode
      * @param opackValue the opack value to encode
-     * @throws IOException if I/O error occurs
+     * @throws IOException thrown when a I/O error occurred
      */
     protected abstract void doEncode(@NotNull O output, @NotNull OpackValue opackValue) throws IOException;
 
@@ -47,7 +47,7 @@ public abstract class OpackCodec<I, O> {
      *
      * @param input the input to decode
      * @return decoded value
-     * @throws IOException if I/O error occurs
+     * @throws IOException thrown when a I/O error occurred
      */
     protected abstract @NotNull OpackValue doDecode(@NotNull I input) throws IOException;
 
@@ -56,7 +56,7 @@ public abstract class OpackCodec<I, O> {
      *
      * @param output     the output to encode
      * @param opackValue the opack value to encode
-     * @throws EncodeException if a problem occurs during encoding; if the type of data to be encoded is not allowed in specific codec
+     * @throws EncodeException thrown when a problem occurred during encoding; if the type of data to be encoded is not allowed in specific codec
      */
     public final synchronized void encode(@NotNull O output, @NotNull OpackValue opackValue) throws EncodeException {
         try {
@@ -71,7 +71,7 @@ public abstract class OpackCodec<I, O> {
      *
      * @param input the input to decode
      * @return decoded value
-     * @throws DecodeException if a problem occurs during decoding; if the type of data to be decoded is not allowed in specific codec
+     * @throws DecodeException thrown when a problem occurred during decoding; if the type of data to be decoded is not allowed in specific codec
      */
     public final synchronized OpackValue decode(@NotNull I input) throws DecodeException {
         try {

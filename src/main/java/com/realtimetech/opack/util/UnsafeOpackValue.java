@@ -50,7 +50,7 @@ public class UnsafeOpackValue {
      *
      * @param opackArray the opack array to be targeted
      * @return the underlying list
-     * @throws InvocationTargetException if exception occurs during invoke opack array getter method
+     * @throws InvocationTargetException if exception occurred during invoke opack array getter method
      * @throws IllegalAccessException    if the getter method object in opack array is enforcing Java language access control and cannot access that method
      */
     public static <E> List<E> getList(@NotNull OpackArray<E> opackArray) throws InvocationTargetException, IllegalAccessException {
@@ -62,7 +62,7 @@ public class UnsafeOpackValue {
      *
      * @param opackObject the opack object to be targeted
      * @return the underlying map
-     * @throws InvocationTargetException if exception occurs during invoke opack map getter method
+     * @throws InvocationTargetException if exception occurred during invoke opack map getter method
      * @throws IllegalAccessException    if the getter method object in opack map is enforcing Java language access control and cannot access that method
      */
     public static <K, V> Map<K, V> getMap(@NotNull OpackObject<K, V> opackObject) throws InvocationTargetException, IllegalAccessException {

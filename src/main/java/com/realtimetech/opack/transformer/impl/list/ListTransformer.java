@@ -42,7 +42,7 @@ public class ListTransformer extends DataStructureTransformer {
      * @param opacker the opacker
      * @param value   the value to serialize
      * @return serialized value
-     * @throws SerializeException if a problem occurs during serializing
+     * @throws SerializeException if a problem occurred during serializing
      */
     @Override
     public @Nullable Object serialize(@NotNull Opacker opacker, @Nullable Object value) throws SerializeException {
@@ -63,11 +63,11 @@ public class ListTransformer extends DataStructureTransformer {
     /**
      * Deserialize opack value.
      *
-     * @param opacker
+     * @param opacker  the opacker
      * @param goalType the goal type to deserialize
      * @param value    the opack value to be deserialized
      * @return deserialized value
-     * @throws DeserializeException if a problem occurs during deserializing
+     * @throws DeserializeException if a problem occurred during deserializing
      */
     @Override
     public @Nullable Object deserialize(@NotNull Opacker opacker, @NotNull Class<?> goalType, @Nullable Object value) throws DeserializeException {
@@ -84,7 +84,8 @@ public class ListTransformer extends DataStructureTransformer {
                     }
 
                     return list;
-                } catch (InvocationTargetException | InstantiationException | IllegalAccessException | ClassNotFoundException exception) {
+                } catch (InvocationTargetException | InstantiationException | IllegalAccessException |
+                         ClassNotFoundException exception) {
                     throw new DeserializeException(exception);
                 }
             }
@@ -99,7 +100,7 @@ public class ListTransformer extends DataStructureTransformer {
      * @param opacker the opacker
      * @param element the element to be serialized
      * @return serialized value
-     * @throws SerializeException if a problem occurs during serializing
+     * @throws SerializeException if a problem occurred during serializing
      */
     @Override
     protected @Nullable Object serializeObject(@NotNull Opacker opacker, @Nullable Object element) throws SerializeException {
@@ -117,7 +118,7 @@ public class ListTransformer extends DataStructureTransformer {
      * @param element the opack value to be deserialized
      * @return deserialized element
      * @throws ClassNotFoundException if the class cannot be located
-     * @throws DeserializeException   if a problem occurs during deserializing
+     * @throws DeserializeException   if a problem occurred during deserializing
      */
     @Override
     protected @Nullable Object deserializeObject(@NotNull Opacker opacker, @Nullable Object element) throws ClassNotFoundException, DeserializeException {

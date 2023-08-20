@@ -65,7 +65,7 @@ public final class BakedType {
          *
          * @param object the object whose field should be modified
          * @param value  the new value for the field of object being modified
-         * @throws IllegalAccessException if this Field object is enforcing Java language access control and the underlying field is either inaccessible or final
+         * @throws IllegalAccessException thrown when this field object is enforcing java language access control and the underlying field is either inaccessible or final
          */
         public void set(@NotNull Object object, @Nullable Object value) throws IllegalAccessException {
             if (!this.field.canAccess(object)) {
@@ -80,7 +80,7 @@ public final class BakedType {
          *
          * @param object the object to extract the field value
          * @return field value
-         * @throws IllegalAccessException if this Field object is enforcing Java language access control and the underlying field is inaccessible.
+         * @throws IllegalAccessException thrown when this field object is enforcing java language access control and the underlying field is inaccessible
          */
         public @Nullable Object get(@NotNull Object object) throws IllegalAccessException {
             if (!this.field.canAccess(object)) {

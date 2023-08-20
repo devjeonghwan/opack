@@ -23,10 +23,10 @@
 package com.realtimetech.opack.bake;
 
 import com.realtimetech.opack.Opacker;
-import com.realtimetech.opack.annotation.Type;
 import com.realtimetech.opack.annotation.Ignore;
 import com.realtimetech.opack.annotation.Name;
 import com.realtimetech.opack.annotation.Transform;
+import com.realtimetech.opack.annotation.Type;
 import com.realtimetech.opack.exception.BakeException;
 import com.realtimetech.opack.transformer.Transformer;
 import com.realtimetech.opack.transformer.TransformerFactory;
@@ -108,7 +108,7 @@ public final class TypeBaker {
      * @param type            the class to be the target
      * @param transformerType the predefined transformer class to register
      * @return true if the predefined transformer registration is successful
-     * @throws InstantiationException if transformer class object cannot be instantiated
+     * @throws InstantiationException thrown when given transformer class object cannot be instantiated
      */
     public boolean registerPredefinedTransformer(@NotNull Class<?> type, @NotNull Class<? extends Transformer> transformerType) throws InstantiationException {
         return this.registerPredefinedTransformer(type, transformerType, false);
@@ -119,9 +119,9 @@ public final class TypeBaker {
      *
      * @param type            the class to be the target
      * @param transformerType the predefined transformer to register
-     * @param inheritable     whether transformer is inheritable
+     * @param inheritable     the flag indicating whether to transformer is inheritable
      * @return true if the predefined transformer registration is successful
-     * @throws InstantiationException if transformer class object cannot be instantiated
+     * @throws InstantiationException thrown when given transformer class object cannot be instantiated
      */
     public synchronized boolean registerPredefinedTransformer(@NotNull Class<?> type, @NotNull Class<? extends Transformer> transformerType, boolean inheritable) throws InstantiationException {
         if (!this.predefinedTransformerMap.containsKey(type)) {
@@ -179,7 +179,7 @@ public final class TypeBaker {
      * @param transformers     the transformer list for add
      * @param annotatedElement the element to be targeted
      * @param root             whether the element is not super class (whether the element is the root)
-     * @throws BakeException if transformer class object cannot be instantiated
+     * @throws BakeException thrown when given transformer class object cannot be instantiated
      */
     private void addTransformer(@NotNull List<@NotNull Transformer> transformers, @NotNull AnnotatedElement annotatedElement, boolean root) throws BakeException {
         if (annotatedElement instanceof Class) {
@@ -231,9 +231,9 @@ public final class TypeBaker {
      *
      * @param annotatedElement the element that annotated {@link Transform Transform}
      * @return transformers
-     * @throws BakeException if transformer class object cannot be instantiated
+     * @throws BakeException thrown when given transformer class object cannot be instantiated
      */
-    private @NotNull Transformer @NotNull[] getTransformer(@NotNull AnnotatedElement annotatedElement) throws BakeException {
+    private @NotNull Transformer @NotNull [] getTransformer(@NotNull AnnotatedElement annotatedElement) throws BakeException {
         List<Transformer> transformers = new LinkedList<>();
         this.addTransformer(transformers, annotatedElement, true);
         return transformers.toArray(new Transformer[0]);
@@ -274,7 +274,7 @@ public final class TypeBaker {
      *
      * @param bakeType the type to bake
      * @return baked type info
-     * @throws BakeException if a problem occurs during baking a class into {@link BakedType BakedType}
+     * @throws BakeException thrown when a problem occurred during baking a class into {@link BakedType BakedType}
      */
     private @NotNull BakedType bake(@NotNull Class<?> bakeType) throws BakeException {
         List<BakedType.Property> properties = new LinkedList<>();
@@ -309,7 +309,7 @@ public final class TypeBaker {
      *
      * @param bakeType the class to be baked
      * @return class info
-     * @throws BakeException if a problem occurs during baking a class into class info
+     * @throws BakeException thrown when a problem occurred during baking a class into class info
      */
     public @NotNull BakedType get(@NotNull Class<?> bakeType) throws BakeException {
         if (!this.backedTypeMap.containsKey(bakeType)) {

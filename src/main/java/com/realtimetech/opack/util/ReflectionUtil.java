@@ -38,7 +38,7 @@ public class ReflectionUtil {
          *
          * @param typeClass the class to create
          * @return created instance
-         * @throws InvocationTargetException if exception occurs in invoked underlying method
+         * @throws InvocationTargetException if exception occurred in invoked underlying method
          * @throws IllegalAccessException    if this Method object is enforcing Java language access control and the underlying method is inaccessible
          */
         abstract <T> @NotNull T allocate(@NotNull Class<T> typeClass) throws InvocationTargetException, IllegalAccessException;
@@ -445,7 +445,7 @@ public class ReflectionUtil {
      *
      * @param instanceType the class to create instance
      * @return created instance
-     * @throws InvocationTargetException if exception occurs in invoked underlying method
+     * @throws InvocationTargetException if exception occurred in invoked underlying method
      * @throws IllegalAccessException    if the method object is enforcing Java language access control and the underlying method is inaccessible
      * @throws InstantiationException    if the class object represents an abstract class, an interface
      */
@@ -470,7 +470,7 @@ public class ReflectionUtil {
      * @param objects      the argument of the constructor
      * @return created instance
      * @throws IllegalArgumentException  if the class doesn't have matched constructor
-     * @throws InvocationTargetException if exception occurs in invoked underlying method
+     * @throws InvocationTargetException if exception occurred in invoked underlying method
      * @throws IllegalAccessException    if the method object is enforcing Java language access control and the underlying method is inaccessible
      * @throws InstantiationException    if the class object represents an abstract class, an interface
      */

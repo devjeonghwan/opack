@@ -38,7 +38,7 @@ public abstract class DataStructureTransformer implements Transformer {
      * @param opacker the opacker
      * @param element the element to be serialized
      * @return serialized value
-     * @throws SerializeException if a problem occurs during serializing
+     * @throws SerializeException if a problem occurred during serializing
      */
     protected abstract @Nullable Object serializeObject(@NotNull Opacker opacker, @Nullable Object element) throws SerializeException;
 
@@ -49,7 +49,7 @@ public abstract class DataStructureTransformer implements Transformer {
      * @param element the opack value to be deserialized
      * @return deserialized element
      * @throws ClassNotFoundException if the class cannot be located
-     * @throws DeserializeException   if a problem occurs during deserializing
+     * @throws DeserializeException   if a problem occurred during deserializing
      */
     protected abstract @Nullable Object deserializeObject(@NotNull Opacker opacker, @Nullable Object element) throws ClassNotFoundException, DeserializeException;
 

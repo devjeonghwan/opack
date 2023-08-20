@@ -44,7 +44,7 @@ public class InputStreamReader implements Reader {
      * The value byte is returned as an int in the range 0 to 255.
      *
      * @return the byte read, or -1 if the end of the stream has been reached
-     * @throws IOException if an I/O exception occurs
+     * @throws IOException thrown when a I/O exception occurred
      */
     public int readByte() throws IOException {
         return this.inputStream.read();
@@ -54,7 +54,7 @@ public class InputStreamReader implements Reader {
      * Reads the next character of data from the input stream.
      *
      * @return the character read
-     * @throws IOException if an I/O exception occurs
+     * @throws IOException thrown when a I/O exception occurred
      */
     public char readChar() throws IOException {
         return (char) (((this.inputStream.read() & 0xFF) << 8) |
@@ -65,7 +65,7 @@ public class InputStreamReader implements Reader {
      * Reads the next short of data from the input stream.
      *
      * @return the short read
-     * @throws IOException if an I/O exception occurs
+     * @throws IOException thrown when a I/O exception occurred
      */
     public short readShort() throws IOException {
         return (short) (((this.inputStream.read() & 0xFF) << 8) |
@@ -76,7 +76,7 @@ public class InputStreamReader implements Reader {
      * Reads the next int of data from the input stream.
      *
      * @return the int read
-     * @throws IOException if an I/O exception occurs
+     * @throws IOException thrown when a I/O exception occurred
      */
     public int readInt() throws IOException {
         return (((this.inputStream.read() & 0xFF) << 24) |
@@ -89,7 +89,7 @@ public class InputStreamReader implements Reader {
      * Reads the next float of data from the input stream.
      *
      * @return the float read
-     * @throws IOException if an I/O exception occurs
+     * @throws IOException thrown when a I/O exception occurred
      */
     public float readFloat() throws IOException {
         return Float.intBitsToFloat(this.readInt());
@@ -99,7 +99,7 @@ public class InputStreamReader implements Reader {
      * Reads the next long of data from the input stream.
      *
      * @return the long read
-     * @throws IOException if an I/O exception occurs
+     * @throws IOException thrown when a I/O exception occurred
      */
     public long readLong() throws IOException {
         return ((((long) this.inputStream.read() & 0xFF) << 56) |
@@ -116,7 +116,7 @@ public class InputStreamReader implements Reader {
      * Reads the next double of data from the input stream.
      *
      * @return the double read
-     * @throws IOException if an I/O exception occurs
+     * @throws IOException thrown when a I/O exception occurred
      */
     public double readDouble() throws IOException {
         return Double.longBitsToDouble(this.readLong());
@@ -126,7 +126,7 @@ public class InputStreamReader implements Reader {
      * Reads the next bytes of data from the input stream.
      *
      * @param bytes the byte array to write the bytes read
-     * @throws IOException if an I/O exception occurs
+     * @throws IOException thrown when a I/O exception occurred
      */
     public void readBytes(byte @NotNull [] bytes) throws IOException {
         this.inputStream.readNBytes(bytes, 0, bytes.length);

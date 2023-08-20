@@ -25,7 +25,7 @@ package com.realtimetech.opack.exception;
 import org.jetbrains.annotations.NotNull;
 
 /**
- * Thrown when a problem occurs during serializing.
+ * Thrown when a problem occurred during serializing.
  */
 public class SerializeException extends Exception {
     public SerializeException(@NotNull String message, @NotNull Throwable cause) {

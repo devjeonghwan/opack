@@ -80,7 +80,7 @@ public class StringWriter extends Writer {
      * Writes a string.
      *
      * @param string String to be written
-     * @throws IOException If an I/O error occurs
+     * @throws IOException If an I/O error occurred
      */
     @Override
     public void write(@NotNull String string) throws IOException {
